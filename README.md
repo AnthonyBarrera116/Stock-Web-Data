@@ -2,13 +2,30 @@
 
 Web driver must be downsloaded from chrome depending on the version you use
 
-Python enviroment is 3.8 Libraires installed in Enviroment:
-- selenium
-- yfinance
-- yahooquery
-- numpy
-- paandas
-- tensorfolw-gpu
+Python enviroment is 3.10 Libraires installed in Enviroment:
+-keras
+-scipy
+-scikit-learn
+-seaborn
+-plotly
+-pytorch
+-theano
+-matplotlib
+-torch
+-torchvision
+-gym
+-gymnasium
+-gymnasium[toy-text]
+-gymnasium[mujoco]
+-selenium
+-yahooquery
+-yfinance
+-numpy==1.23.5
+-pandas_market_calendars
+-feedparser
+-newspaper3k
+-lxml[html_clean]
+-transformers
 
 # Goal
 
