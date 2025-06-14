@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import joblib
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
@@ -15,7 +15,8 @@ class LSTMModel:
 
         self.df = None
         self.X_cols = []
-        self.y_cols = ['Close', 'High', 'Low', 'Volume', 'long_term_signal']
+        # add volume
+        self.y_cols = ['Close', 'High', 'Low', 'long_term_signal']
 
         self.X_scaler = MinMaxScaler()
         self.y_scaler = MinMaxScaler()
@@ -39,7 +40,8 @@ class LSTMModel:
             df = df[df['Year'] >= 2020]
 
         # Define X columns (exclude targets and future info)
-        exclude_cols = ['Close', 'long_term_signal', 'future_return_20d']
+        # volume taken out
+        exclude_cols = ['Close', 'long_term_signal', 'future_return_20d','Volume']
         self.X_cols = [col for col in df.columns if col not in exclude_cols]
 
         self.df = df
