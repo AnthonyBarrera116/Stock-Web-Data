@@ -60,8 +60,9 @@ class RiskAnalyzer:
         if isinstance(self.days.columns, pd.MultiIndex):  # Flatten MultiIndex columns if present
             self.days.columns = [col[0] for col in self.days.columns.values]
 
-        self.df = self.df.drop_duplicates(subset='Date').sort_values('Date')  # Clean and sort quarterly
-        self.days = self.days.drop_duplicates(subset='Date').sort_values('Date')  # Clean and sort daily
+        # Drop rows with null dates before merge_asof
+        self.df = self.df.dropna(subset=['Date']).drop_duplicates(subset='Date').sort_values('Date')
+        self.days = self.days.dropna(subset=['Date']).drop_duplicates(subset='Date').sort_values('Date')
 
         emp_df = None  # Will temporarily hold employee count if needed
         if 'Employees' in self.df.columns:  # If employee data exists
