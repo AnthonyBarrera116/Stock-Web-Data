@@ -148,8 +148,9 @@ def main():
             # Print predicted values directly
             print("🔮 Predicted values for next 5 trading days:")
             # Print only the predicted values
+            #Volume={int(row['Volume'])}
             for d, row in predicted_df.iterrows():
-                print(f"Day {d+1}: Close={row['Close']:.2f}, High={row['High']:.2f}, Low={row['Low']:.2f}, Volume={int(row['Volume'])}, Signal={int(row['long_term_signal'])}")
+                print(f"Day {d+1}: Close={row['Close']:.2f}, High={row['High']:.2f}, Low={row['Low']:.2f}, , Signal={int(row['long_term_signal'])}")
 
 
 
