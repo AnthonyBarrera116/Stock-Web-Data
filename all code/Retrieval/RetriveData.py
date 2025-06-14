@@ -237,7 +237,7 @@ class Collect:
             combined_df.sort_values(by="Date", inplace=True)
             # make folder and save path
             combined_csv_path = os.path.join(os.getcwd(),"stock",self.name, f"{self.name}_combined_quarterly.csv")
-            os.makedirs(self.name, exist_ok=True)
+            #os.makedirs(self.name, exist_ok=True)
 
             # make sure everything but Date is clean
             combined_df.replace("-", 0, inplace=True)
