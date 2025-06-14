@@ -49,7 +49,8 @@ class StockPredictor:
             y = self.y_scaler.inverse_transform(y_scaled)
 
             # Format output
-            target_cols = ["Close", "High", "Low", "Volume", "long_term_signal"]
+            #"Volume", 
+            target_cols = ["Close", "High", "Low", "long_term_signal"]
             predicted_df = pd.DataFrame(y, columns=target_cols)
             predicted_df["long_term_signal"] = predicted_df["long_term_signal"].round().astype(int)
 
