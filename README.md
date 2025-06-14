@@ -1,6 +1,6 @@
 # Stock-Web-Data
 
-Web driver must be downsloaded from chrome depending on the version you use
+Web driver must be downloaded from chrome depending on the version you use
 
 Python enviroment is 3.10 Libraires installed in Enviroment:
 - keras
